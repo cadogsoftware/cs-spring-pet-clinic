@@ -1,3 +1,3 @@
 # cs-spring-pet-clinic
 
-My version of Spring's Pet Clinic
+Cadog Software's version of Spring's Pet Clinic
