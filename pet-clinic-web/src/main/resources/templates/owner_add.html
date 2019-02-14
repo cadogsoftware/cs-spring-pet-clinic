@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>CS Spring Pet Clinic</title>
+</head>
+<body>
+<h1>Add Owner</h1>
+<form action="#" th:action="@{/owner}" th:object="${owner}" method="post">
+    <p>First name: <input type="text" th:field="*{firstName}" /></p>
+    <p>Last name: <input type="text" th:field="*{lastName}" /></p>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+</body>
+</html>

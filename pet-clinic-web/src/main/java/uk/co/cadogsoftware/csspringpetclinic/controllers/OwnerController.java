@@ -2,6 +2,9 @@ package uk.co.cadogsoftware.csspringpetclinic.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import uk.co.cadogsoftware.csspringpetclinic.model.Owner;
 import uk.co.cadogsoftware.csspringpetclinic.repositories.OwnerRepository;
@@ -23,12 +26,14 @@ public class OwnerController {
         return "owners"; // the view name
     }
 
-    @RequestMapping("/owner/add")
-    public String addOwner(Model model) {
+    @GetMapping("/owner")
+    public String ownerForm(Model model) {
+        model.addAttribute("owner", new Owner());
+        return "owner_add";
+    }
 
-        Owner owner = new Owner();
-        owner.setFirstName("Rich");
-        owner.setLastName("Mogs");
+    @PostMapping("/owner")
+    public String addOwnerSubmit(@ModelAttribute Owner owner, Model model) {
 
         ownerRepository.save(owner);
 
