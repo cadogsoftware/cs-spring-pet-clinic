@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>CS Spring Pet Clinic</title>
+</head>
+<body>
+<h1>Owner Added</h1>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+    </tr>
+    <tr>
+        <td th:text="${owner.id}">Default id</td>
+        <td th:text="${owner.firstName}">Default first name</td>
+        <td th:text="${owner.lastName}">Default last name</td>
+    </tr>
+</table>
+
+</body>
+</html>
